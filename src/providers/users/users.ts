@@ -24,8 +24,8 @@ export class UsersProvider {
   }
 
 
-  getUser(): void{
-    console.log('one user');
+  getUser(id:string): Observable<User>{
+    return this.http.get<User>(`${this.url}/${id}`);
   }
 
   createUser(): void{
